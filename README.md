@@ -1,1 +1,3 @@
-# rankable
+# Rankly
+
+Coming soon.
