@@ -31,6 +31,8 @@ The project contains a single HTML file. As well as a static header and footer, 
 
 Contains my custom styles for the app, including some tweaks to the Bootstrap defaults. I used [Magic Pattern](https://www.magicpattern.design/tools/css-backgrounds) to generate the subtle (barely visible!) background pattern.
 
+In my HTML and JS file I also make use of [Font Awesome](https://fontawesome.com/) to make the app prettier.
+
 #### `script.js`
 
 All the interactivity in this project (apart from some subtle CSS animations) is implemented with JavaScript. This ranges from the subtle, such as dynamically updating the year in the footer or the text on a button when clicked, to the fundamental — i.e. the entirety of the ranking functionality of the app. 
