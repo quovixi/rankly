@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rankly</title>
+    <meta property="og:title" content="rankly." />
+    <meta property="og:description" content="A simple tool to help you rank stuff" />
+    <meta property="og:image" content="og.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/">rankly.</a></h1>
+        </header>
+        <main>
+            <section id="input-section">
+                <div>
+                    <h2>A simple tool to help you rank stuff</h2>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="load-json" onclick="changeButtonText()">Load sample data</button>
+                <div class="row">
+                    <div class="left-content">
+                        <textarea id="user-input" rows="10" autofocus placeholder="Enter a list of up to 10 items, one per line."></textarea>
+                        <button type="button" class="btn btn-primary" id="submit-btn">Start ranking</button>
+                        <p class="error" id="error-msg" style="display: none;">Please enter between 2 and 10 items.</p>
+                    </div>
+                    <div class="right-content">
+                        <h3>Why only 10 items?</h3>
+                        <p>You're going to be shown every possible combination and asked to pick a winner. The formula for counting the number of pairwise combinations is:</p>
+                        <p class="formula">n(n-1)/2</p>
+                        <p>This means that 10 items produce <strong>45 pair combinations</strong>. Any longer of a list would get pretty tiresome to rank!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ranking-section" style="display: none;">
+                <h2>Which is better?</h2>
+                <div class="pair-container" id="pair-container">
+                    <button type="button" class="btn btn-primary btn-lg" id="item1-btn"></button>
+                    <button type="button" class="btn btn-primary btn-lg" id="item2-btn"></button>
+                </div>
+                <p>If you see the same combination twice, it's because there's a tie and we're trying to find the winner!</p>
+            </section>
+
+            <section class="result-section" id="result-section" style="display: none;">
+                <h2>Here's your ranked list!</h2>
+                <div class="row">
+                    <div class="left-content">
+                        <ol id="rankings-list"></ol>    
+                    </div>
+                    <div class="right-content">
+                        <h3>How is this calculated?</h3>
+                        <p>Points are awarded each time an item is preferred. This final ranking shows all items in order from most points to least.</p>
+                        <p>It's not a perfect system, but it turns out most ranking algorithms are complicated and imperfect — most assume transitive preference (i.e. if I like A more than B and B more than C, then I must like A more than C), but humans aren't always so rational.</p>
+                        <p>As this is just a bit of fun, a very simple ranking algorithm was applied.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <footer>
+                    <p>&#169; <span id="year"></span>. Made by Vicky Carmichael as my final project for <a href="https://cs50.harvard.edu" target="blank">CS50</a>. </p>
+                </footer>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
