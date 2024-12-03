@@ -20,13 +20,15 @@ const userInput = document.getElementById('user-input');
 
 // Load sample data files in textarea on button click
 const sampleFiles = [
+    'data/beatles.json',
+    'data/coffee.json',
+    'data/colours.json',
     'data/friends.json', 
-    'data/potatoes.json', 
+    'data/potatoes.json',
+    'data/pokemon.json', 
     'data/princesses.json', 
-    'data/beatles.json', 
-    'data/starwars.json', 
-    'data/seasons.json', 
-    'data/colours.json'
+     'data/seasons.json',
+    'data/starwars.json' 
 ];
 
 loadJsonBtn.addEventListener('click', () => {
