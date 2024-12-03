@@ -2,7 +2,7 @@
 function changeButtonText() {
     const button = 
         document.querySelector('button');
-    button.innerHTML = '&#8635 Reload sample data';
+    button.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Reload sample data';
 }
 
 
