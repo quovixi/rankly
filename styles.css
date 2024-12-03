@@ -49,13 +49,19 @@ h3 {
     --bs-btn-padding-x: 4rem;
     --bs-btn-font-size: 1.25rem;
     --bs-btn-border-radius: 0.5rem;
-    margin: 1rem 0;
+    margin: 1rem 0.4rem;
 }
 
 .pair-container {
-    @media(min-width: 6000px) {
-        display: flex;
-        justify-content: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .pair-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
