@@ -3,7 +3,7 @@
 _Created by Vicky Carmichael for my CS50 final project_
 
 ## Video demo
-Link coming soon…
+https://youtu.be/hKtGK1VcX70
 
 ## Description
 
