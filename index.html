@@ -61,9 +61,26 @@
                     </div>
                     <div class="right-content">
                         <h3>How is this calculated?</h3>
-                        <p>Points are awarded each time an item is preferred. This final ranking shows all items in order from most points to least.</p>
-                        <p>It's not a perfect system, but it turns out most ranking algorithms are complicated and imperfect — most assume transitive preference (i.e. if I like A more than B and B more than C, then I must like A more than C), but humans aren't always so rational.</p>
-                        <p>As this is just a bit of fun, a very simple ranking algorithm was applied.</p>
+                        <p>Ranking algorithms tend to be complicated and imperfect — most assume transitive preference (i.e. if I like A more than B and B more than C, then I must like A more than C), but humans aren't always so rational.</p>
+                        <p>As this app is just for a fun, I devised a simplistic algorithm where points are awarded according to each choice you make and small decimal values are added at random to minimise ties.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#breakdownModal">See a breakdown of your choices</button>
+                </div>
+                <div>
+                    <div class="modal fade" id="breakdownModal" tabindex="-1" aria-labelledby="breakdownLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="breakdownLabel">Here's what you chose on each round</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul id="breakdown"></ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

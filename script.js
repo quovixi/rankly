@@ -27,7 +27,7 @@ const sampleFiles = [
     'data/potatoes.json',
     'data/pokemon.json', 
     'data/princesses.json', 
-     'data/seasons.json',
+    'data/seasons.json',
     'data/starwars.json' 
 ];
 
@@ -113,15 +113,26 @@ function showNextPair() {
     document.getElementById('item2-btn').onclick = () => handleChoice(item2, item1);
 }
 
+let choiceHistory = [];
+
 function handleChoice(chosenItem, otherItem) {
-    scores[chosenItem] += 7 + Math.random(); 
-    scores[otherItem] += 3 + Math.random(); 
+    const chosenPoints = 7 + Math.random();
+    const otherPoints = 3 + Math.random();
+
+    scores[chosenItem] += chosenPoints;
+    scores[otherItem] += otherPoints;
+
+    // Record the choice
+    choiceHistory.push({
+        chosen: chosenItem,
+        other: otherItem,
+    });
 
     currentIndex++;
     showNextPair();
 }
 
-// Display ranked results
+// Display ranked results with breakdown
 function displayResults() {
     const sortedItems = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
 
@@ -131,7 +142,15 @@ function displayResults() {
     const list = document.getElementById('rankings-list');
     sortedItems.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${item}`;
+        listItem.textContent = `${item}: ${scores[item].toFixed(2)} points`;
         list.appendChild(listItem);
     });
+
+    const breakdown = document.getElementById('breakdown');
+    choiceHistory.forEach(({ chosen, other }) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `You chose <span class="chosen-highlight">${chosen}</span> over <span class="other-highlight">${other}</span>`;
+        breakdown.appendChild(listItem);
+    });
+
 }

@@ -105,7 +105,6 @@ button, select {
     transform: translateY(-1px);
 }
 
-
 .formula {
     font-style: italic;
     color: #ced4da;
@@ -128,6 +127,31 @@ button, select {
     min-width: 300px; 
     padding: 1rem;
     box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: var(--bs-gray-900);
+}
+
+.modal-header {
+    border-bottom: 0;
+    padding: 10px 20px 0 20px;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.chosen-highlight {
+    background-color: var(--bs-blue);
+    border-radius: 2px;
+    padding: 3px 6px;
+}
+
+.other-highlight {
+    background-color: var(--bs-gray-700);
+    border-radius: 2px;
+    padding: 3px 6px;
 }
 
 ol li {
