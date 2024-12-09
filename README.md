@@ -1,6 +1,8 @@
 # rankly.
 
-_Created by Vicky Carmichael for my CS50 final project_
+_Created by Vicky Carmichael for my [CS50x](https://cs50.harvard.edu) final project_
+
+Try rankly out at: https://rankly.quovixi.com/
 
 ## Video demo
 https://youtu.be/hKtGK1VcX70
@@ -65,5 +67,5 @@ Ultimately though, I decided this was a bit visually confusing and didn't add mu
 
 - Sublime Text as my code editor
 - `http-server` for browser testing
-- GitHub for version control and automatic deploys: https://github.com/quovixi/rankly
-- Netlify for hosting: https://rankly.netlify.app.
+- GitHub for version control and automatic deploys
+- Netlify for hosting
