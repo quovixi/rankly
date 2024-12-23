@@ -52,6 +52,20 @@ h3 {
     margin: 1rem 0.4rem;
 }
 
+.btn-primary {
+    background-color: var(--bs-pink);
+    border-color: var(--bs-pink);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: var(--bs-pink) !important;
+    border-color: var(--bs-pink) !important;
+}
+
+
 .pair-container {
     display: flex;
     justify-content: center;
@@ -143,7 +157,7 @@ button, select {
 }
 
 .chosen-highlight {
-    background-color: var(--bs-blue);
+    background-color: var(--bs-pink);
     border-radius: 2px;
     padding: 3px 6px;
 }
