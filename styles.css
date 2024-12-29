@@ -105,12 +105,12 @@ h3 {
 }
 
 a {
-    color: var(--bs-yellow);
+    color: #FEBA3C;
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: var(--bs-yellow);
+    color: #FEBA3C;
     text-decoration: underline;
 }
 
